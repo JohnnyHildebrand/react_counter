@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from "react";
+import  { Component } from 'react'
 
  class Counter extends Component {
   render() {
@@ -38,8 +39,7 @@ import React, { Component } from 'react'
     classes += this.props.counter.value === 0  ?  "warning" : "primary";
     return classes;
   };
-  formatCount = () =>
-{
+  formatCount = () =>{
     const {value} = this.props.counter;
     return value === 0 ? "Zero" : value;
 };

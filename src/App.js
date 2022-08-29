@@ -1,18 +1,28 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import 'font-awesome/css/font-awesome.css';
-import Counter from './components/Counter';
+import Counters from './components/Counters';
+import React, { Component } from 'react';
 
 
-import React from 'react'
-
-function App() {
+class App extends Component() {
+  state = {
+    counters : [
+      {id:1, value:0},
+      {id:2, value:0},
+      {id:3, value:0},
+      {id:4, value:0}
+    ]
+    };
+  
+  
+    renders()
+  {
   return (
     <div className='App'>
       <NavBar totalCounters="10"></NavBar>
-      <Counter counter= "10"></Counter>
+      <Counters counters ={this.state.counters}></Counters>
     </div>
-  )
+  );
 }
-
-export default App
+}
+export default App;
