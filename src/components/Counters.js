@@ -16,7 +16,7 @@ export class Counters extends Component {
                 <button
                     className="btn btn-primary m-2"
                     onClick={this.props.onRestart}
-                    disabled={this.props.counters.length !== 0 ? "disabled" : ""}
+                    disabled={this.props.counters.length === 0 ? "disabled" : ""}
                 >
                     <i className="fa fa-recycle" aria-hidden="true" />
                 </button>
