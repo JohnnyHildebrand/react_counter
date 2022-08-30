@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-function NavBar({totalCounters}) {
+function NavBar ({totalCounters}) {
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="navbar-brand" style={{fontWeight:'bold'}}>
@@ -14,7 +14,7 @@ function NavBar({totalCounters}) {
           </span> Items
       </div>
     </nav>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

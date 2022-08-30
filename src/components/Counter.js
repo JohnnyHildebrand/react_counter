@@ -1,7 +1,6 @@
-import React from "react";
-import  { Component } from 'react'
+import React,  {Component} from 'react';
 
- class Counter extends Component {
+  export class Counter extends Component {
   render() {
     return (
         <div>
@@ -43,5 +42,5 @@ import  { Component } from 'react'
     const {value} = this.props.counter;
     return value === 0 ? "Zero" : value;
 };
-}
-export default Counter;
+ }
+export default Counter

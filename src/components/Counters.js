@@ -1,9 +1,9 @@
-import React from "react";
-import { Component } from "react";
+import React, {Component}from 'react';
 import Counter from "./Counter";
 
-export class Counters extends Component {
+ export class Counters extends Component {
   render() {
+    
     return (
       <div>
 1        <button
@@ -29,8 +29,8 @@ export class Counters extends Component {
                 />           
         ))}
       </div>
-    );
+    )
   }
 }
 
-export default Counters;
+export default Counters
