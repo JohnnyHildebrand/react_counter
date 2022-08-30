@@ -1,5 +1,5 @@
 import './App.css';
-import  { Component } from 'react';
+import  React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import Counters from './components/Counters';
 
@@ -14,14 +14,7 @@ class App extends Component  {
       { id: 4, value: 0}
     ]
     };
-    handleReset = () => {
-      const counters = this.state.counters.map(c => {
-        c.value = 0;
-         return c; 
-        });  
-      this.setstate({counters});
-    };
-
+  
     handleIncrement = counter => {
       const counters = [...this.state.counters];
       const index = counters.indexOf(counter);
@@ -29,31 +22,45 @@ class App extends Component  {
       counters[index].value++;
       this.setState({ counters }); 
     };
-    handleDecrement = ()=> {
-
+    handleDecrement = counter => {
+      const counters = [...this.state.counters];
+      const index = counters.indexOf(counter);
+      counters[index].value--;
+      this.setState({ counters });
     };
-    handleDelete = ()=> {
-      
+    handleReset = () => {
+      const counters = this.state.counters.map(c => {
+          c.value = 0;
+          return c;
+      });
+      this.setState({ counters });
+    }; handleDelete = counterId => {
+      const counters = this.state.counters.filter(c => c.id !== counterId);
+      this.setState({ counters });
     };
-    handleRestart = ()=> {
+    
+ handleRestart = () => {
+  window.location.reload();
+};
 
-    };
-
-    renders()
-  {
+render()
+{
   return (
-    <div className='App'>
-      <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}></NavBar>
-      <Counters 
+    <div className="App">
+       <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}></NavBar>
+       <main className="container">
+          <Counters 
             counters ={this.state.counters}
             onReset={this.handleReset}
             onIncrement={this.handleIncrement}
             onDecrement={this.handleDecrement}
             onDelete={this.handleDelete}
             onRestart={this.handleRestart}
-          ></Counters>
+          />
+       </main>
     </div>
   );
 }
 }
+
 export default App;
